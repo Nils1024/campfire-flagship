@@ -24,3 +24,6 @@
 - enemys is one scene, different propeties, all follow the same path
 - shop, make way to track and have points, shop script on its own
 - physical controler, make it look trashed
+
+# Balancing
+- 

@@ -1,6 +1,10 @@
 extends Node
 
 var barcode_buffer: String = ""
+var multiplier :float = 1.0
+var reloadtime : float = 1.0
+var towerRadius : float = 1.0
+var strenght : float = 1.0
 
 enum barcodeState {
 	WAITING_FOR_TOWER,
@@ -55,13 +59,14 @@ func apply_powerup_to_tower(powerup: String, tower: String) -> void:
 	
 	match powerup:
 		"FasterReload":
-			pass
+			if reloadtime != 0.1:
+				reloadtime = reloadtime - 0.1
 		"BiggerRadius":
-			pass
+			towerRadius += .5
 		"MorePower":
-			pass
+			strenght += 1
 		"2xPoints":
-			pass
+			multiplier *= 2
 
 
 func reset_scan_state():

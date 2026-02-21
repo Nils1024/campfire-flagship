@@ -32,6 +32,9 @@ signal areaBodyEntered
 func _ready() -> void:
 	print(codes["code1"])
 
+func _physics_process(delta):
+	$roundnum.text = str(Pause.roundnum)
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		var keycode = event.keycode

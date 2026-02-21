@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bxby0lylr2xnb" path="res://Scripts/barcode.gd" id="1_37kl0"]
 [ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://defjfh8xestnc" path="res://tower.tscn" id="3_6uqi0"]
-[ext_resource type="Script" path="res://Scripts/shopmanager.gd" id="3_g14j6"]
+[ext_resource type="Script" uid="uid://g7bnbd2yare0" path="res://Scripts/shopmanager.gd" id="3_g14j6"]
 [ext_resource type="PackedScene" uid="uid://bdndrcj0hxo3" path="res://path.tscn" id="4_ykrsh"]
 [ext_resource type="Script" uid="uid://bhm1v0os055f7" path="res://Scripts/level_system.gd" id="5_g14j6"]
 
@@ -44,3 +44,12 @@ position = Vector2(745, 536)
 
 [node name="Path" parent="." unique_id=1027853351 instance=ExtResource("4_ykrsh")]
 script = ExtResource("5_g14j6")
+
+[node name="roundnum" type="Label" parent="." unique_id=261485593]
+offset_left = 251.0
+offset_top = 1.0
+offset_right = 758.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "test"
