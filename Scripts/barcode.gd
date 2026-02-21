@@ -33,7 +33,7 @@ func _ready() -> void:
 	print(codes["code1"])
 
 func _physics_process(delta):
-	$roundnum.text = str(Pause.roundnum)
+	$roundnum.text = str(GlobalData.roundnum)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -69,3 +69,7 @@ func spawn_effect(effect):
 func remove_effect(tower):
 	tower.remove_children()
 		
+
+
+func _on_end_area_area_entered(area: Area2D) -> void:
+	GlobalData.child_count -= 1

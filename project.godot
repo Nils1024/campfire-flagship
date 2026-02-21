@@ -19,6 +19,7 @@ config/icon="res://Assets/icon.svg"
 
 Shop="*uid://g7bnbd2yare0"
 Pause="*uid://yu8ilfdi14fe"
+GlobalData="*uid://cm871fxc1vxrb"
 
 [input]
 

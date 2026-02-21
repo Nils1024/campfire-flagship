@@ -7,25 +7,18 @@ var spawn_queue = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	for i in range(Pause.roundnum * 5):	
-		add()
-		await get_tree().create_timer(.5).timeout
-	Pause.roundnum += 1
-	await get_tree().create_timer(1).timeout
 	next_level()
 
 func next_level():
-	
-	for i in range(Pause.roundnum * 5):	
+	for i in range(GlobalData.spawn_amount):	
 		add()
 		await get_tree().create_timer(.5).timeout
-	Pause.roundnum += 1
-	await get_tree().create_timer(1).timeout
-	next_level()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if GlobalData.child_count <= 0:
+		GlobalData.next_round()
+		next_level()
 	if not spawn_queue.is_empty():
 		var enemy: PathFollow2D = spawn_queue.pop_front()
 		var animation_player: AnimationPlayer = enemy.get_child(2)

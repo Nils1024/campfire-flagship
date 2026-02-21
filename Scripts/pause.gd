@@ -1,9 +1,5 @@
 extends Node
 
-var roundnum := 0
-
-var enemies_found = []
-
 var barcode_buffer: String = ""
 
 enum barcodeState {

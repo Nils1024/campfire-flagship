@@ -16,6 +16,7 @@ func _on_area_area_exited(area: Area2D) -> void:
 
 func remove_children():
 	for child in children:
+		GlobalData.child_count -= 1
 		child.queue_free()
 	children.clear()
 		
