@@ -64,4 +64,15 @@ position = Vector2(1170, 565)
 scale = Vector2(-0.35112315, 1.1900377)
 shape = SubResource("RectangleShape2D_g14j6")
 
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=161427808]
+modulate = Color(0, 1, 0.14117648, 1)
+custom_minimum_size = Vector2(100, 0)
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 116.0
+offset_bottom = 35.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
 [connection signal="area_entered" from="EndArea" to="." method="_on_end_area_area_entered"]

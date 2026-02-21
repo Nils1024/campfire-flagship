@@ -1,6 +1,7 @@
 extends Node
 @export var code1 : String = "889392021394"
 var code2: String = "992-00014-SIF"
+var codes_on_reload = []
 
 @onready var codes = {
 	"code1":{
@@ -30,7 +31,8 @@ var barcode_buffer: String = ""
 signal areaBodyEntered
 
 func _ready() -> void:
-	print(codes["code1"])
+	$HealthBar.value = GlobalData.health
+	$HealthBar.max_value = GlobalData.health
 
 func _physics_process(delta):
 	$roundnum.text = str(GlobalData.roundnum)
@@ -50,9 +52,12 @@ func _input(event: InputEvent) -> void:
 
 func on_barcode_scanned(barcode: String) -> void:
 	for code in codes.values():
-		if code["code"] == barcode:
+		if code["code"] == barcode and not codes_on_reload.has(barcode):
+			codes_on_reload.append(barcode)
 			spawn_effect(code["file"])
 			remove_effect(code["file"])
+			await get_tree().create_timer(GlobalData.reload_time).timeout
+			codes_on_reload.erase(barcode)
 			break
 	
 	$Label.text = "Scanned Code: %s" %barcode
@@ -73,3 +78,7 @@ func remove_effect(tower):
 
 func _on_end_area_area_entered(area: Area2D) -> void:
 	GlobalData.child_count -= 1
+	GlobalData.health -= 1.0
+	$HealthBar.value = GlobalData.health
+	if GlobalData.health <= 0.0:
+		get_tree().quit()
