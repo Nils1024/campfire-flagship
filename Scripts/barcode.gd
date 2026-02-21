@@ -21,19 +21,29 @@ func _input(event: InputEvent) -> void:
 
 func on_barcode_scanned(barcode: String) -> void:
 	if barcode == code1:
-		spawn_effect($"test-folder/Tower")
+		var folder = $"test-folder/Tower"
+		spawn_effect(folder)
+		remove_effect(folder)
 	elif barcode == code2:
-		spawn_effect($"test-folder/Tower2")
+		var folder = $"test-folder/Tower2"
+		spawn_effect(folder)
+		remove_effect(folder)
 	
 	$Label.text = "Scanned Code: %s" %barcode
-	
+	Global.scanning = true
+	await get_tree().create_timer(.01).timeout
+	Global.scanning = false
 	# Do whatever you want with the barcode here
 	
 func spawn_effect(effect):
-	if len(effect.get_meta("children")) > 0:
-		print("DEATH")
 	var color_rect = effect.get_node("ColorRect")
 	var original_color = color_rect.color
 	color_rect.color = "Black"
 	await get_tree().create_timer(.2).timeout #await animation end insteadd
 	color_rect.color = original_color
+	
+func remove_effect(effect):
+	if is_instance_valid(effect):
+		print(effect.get_meta("children"))
+		for child in effect.get_meta("children"):
+			child.queue_free()

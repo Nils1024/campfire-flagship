@@ -1,11 +1,13 @@
 extends Node2D
 
 var spawn_queue = []
-@onready var tower_scene = preload("res://tower.tscn")
+@onready var tower_scene = preload("res://enemy.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add()
+	for i in range(10):	
+		add()
+		await get_tree().create_timer(.5).timeout
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,4 +21,3 @@ func add():
 	var new_tower = tower_scene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 	new_tower.add_to_group("Enemy")
 	spawn_queue.append(new_tower)
-	print
