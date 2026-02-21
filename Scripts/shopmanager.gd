@@ -82,6 +82,7 @@ func apply_powerup_to_tower(powerup: String, tower: String) -> void:
 				strenght += 1
 		"2xPoints":
 			if GlobalData.points >= twoxpointsprice:
+				
 				GlobalData.points =- twoxpointsprice
 				twoxpointsprice *= 2
 				multiplier *= 2

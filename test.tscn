@@ -6,6 +6,11 @@
 [ext_resource type="Script" uid="uid://g7bnbd2yare0" path="res://Scripts/shopmanager.gd" id="3_g14j6"]
 [ext_resource type="PackedScene" uid="uid://bdndrcj0hxo3" path="res://path.tscn" id="4_ykrsh"]
 [ext_resource type="Script" uid="uid://bhm1v0os055f7" path="res://Scripts/level_system.gd" id="5_g14j6"]
+[ext_resource type="Texture2D" uid="uid://cy4m7ws21pjyg" path="res://Assets/Towers/celciustower.png" id="5_vbegm"]
+[ext_resource type="Texture2D" uid="uid://bx8btic8iv2io" path="res://Assets/Towers/strawberrything.png" id="6_77dp3"]
+[ext_resource type="Texture2D" uid="uid://dfgxu5bxndb33" path="res://Assets/Towers/cheezits.png" id="6_ehkex"]
+[ext_resource type="Texture2D" uid="uid://dbg3lx5cihwe" path="res://Assets/Towers/yubikey.png" id="7_5tkv4"]
+[ext_resource type="Texture2D" uid="uid://bsleb45job2sl" path="res://Assets/Towers/cocacola.png" id="9_0m0f1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g14j6"]
 size = Vector2(111, 141)
@@ -33,17 +38,37 @@ text = "Current Points:"
 [node name="Tower" parent="test-folder" unique_id=2047865917 instance=ExtResource("3_6uqi0")]
 position = Vector2(458, 132)
 
+[node name="Sprite2D" type="Sprite2D" parent="test-folder/Tower" unique_id=615440736]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_vbegm")
+
 [node name="Tower2" parent="test-folder" unique_id=923631202 instance=ExtResource("3_6uqi0")]
 position = Vector2(182, 564)
+
+[node name="Sprite2D" type="Sprite2D" parent="test-folder/Tower2" unique_id=736074509]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_77dp3")
 
 [node name="Tower3" parent="test-folder" unique_id=1305014235 instance=ExtResource("3_6uqi0")]
 position = Vector2(607, 361)
 
+[node name="Sprite2D" type="Sprite2D" parent="test-folder/Tower3" unique_id=1157987405]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_5tkv4")
+
 [node name="Tower4" parent="test-folder" unique_id=1928979111 instance=ExtResource("3_6uqi0")]
 position = Vector2(1007, 123)
 
+[node name="Sprite2D" type="Sprite2D" parent="test-folder/Tower4" unique_id=605080993]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_ehkex")
+
 [node name="Tower5" parent="test-folder" unique_id=443752210 instance=ExtResource("3_6uqi0")]
 position = Vector2(745, 536)
+
+[node name="Sprite2D" type="Sprite2D" parent="test-folder/Tower5" unique_id=1852486528]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_0m0f1")
 
 [node name="Path" parent="." unique_id=1027853351 instance=ExtResource("4_ykrsh")]
 script = ExtResource("5_g14j6")
@@ -67,12 +92,20 @@ shape = SubResource("RectangleShape2D_g14j6")
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=161427808]
 modulate = Color(0, 1, 0.14117648, 1)
 custom_minimum_size = Vector2(100, 0)
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 188.0
-offset_bottom = 34.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 230.0
+offset_bottom = 35.0
 step = 1.0
 value = 100.0
 show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="HealthBar" unique_id=2114830945]
+layout_mode = 0
+offset_right = 227.0
+offset_bottom = 32.0
+text = "Health = 10"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_entered" from="EndArea" to="." method="_on_end_area_area_entered"]
