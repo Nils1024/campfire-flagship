@@ -25,8 +25,7 @@ func on_barcode_scanned(barcode: String) -> void:
 	elif barcode == code2:
 		spawn_effect($"test-folder/Tower2")
 	
-	$Label.text = barcode
-	print("Scanned barcode: ", barcode)
+	$Label.text = "Scanned Code: %s" %barcode
 	
 	# Do whatever you want with the barcode here
 	
