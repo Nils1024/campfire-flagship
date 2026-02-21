@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bxby0lylr2xnb" path="res://Scripts/barcode.gd" id="1_37kl0"]
 [ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://bcqh6sasjcgbc" path="res://tower.tscn" id="3_6uqi0"]
+[ext_resource type="Script" uid="uid://g7bnbd2yare0" path="res://Scripts/shopmanager.gd" id="3_g14j6"]
 [ext_resource type="PackedScene" uid="uid://bdndrcj0hxo3" path="res://path.tscn" id="4_ykrsh"]
 [ext_resource type="Script" uid="uid://bhm1v0os055f7" path="res://level_system.gd" id="5_g14j6"]
 
@@ -13,6 +14,7 @@ script = ExtResource("1_37kl0")
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_8uh7m")
+script = ExtResource("3_g14j6")
 
 [node name="Label" type="Label" parent="." unique_id=577376686]
 offset_left = 642.0
