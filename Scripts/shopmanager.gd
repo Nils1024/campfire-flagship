@@ -28,9 +28,6 @@ func on_barcode_scanned(barcode: String) -> void:
 			if is_valid_powerup(barcode):
 				pending_powerup = barcode
 				current_state = barcodeState.WAITING_FOR_TOWER
-				print("Powerup scanned. Now scan a tower.")
-			else:
-				print("Invalid powerup barcode.")
 
 		barcodeState.WAITING_FOR_TOWER:
 			if is_valid_tower(barcode):
@@ -70,4 +67,3 @@ func apply_powerup_to_tower(powerup: String, tower: String) -> void:
 func reset_scan_state():
 	pending_powerup = ""
 	current_state = barcodeState.WAITING_FOR_POWERUP
-	print("Scan a new powerup.")

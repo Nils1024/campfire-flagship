@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 Shop="*uid://g7bnbd2yare0"
+Pause="*uid://yu8ilfdi14fe"
 
 [input]
 
