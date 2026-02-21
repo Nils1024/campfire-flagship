@@ -30,9 +30,7 @@ func on_barcode_scanned(barcode: String) -> void:
 		remove_effect(folder)
 	
 	$Label.text = "Scanned Code: %s" %barcode
-	Global.scanning = true
 	await get_tree().create_timer(.01).timeout
-	Global.scanning = false
 	# Do whatever you want with the barcode here
 	
 func spawn_effect(effect):
@@ -44,6 +42,6 @@ func spawn_effect(effect):
 	
 func remove_effect(effect):
 	if is_instance_valid(effect):
-		print(effect.get_meta("children"))
 		for child in effect.get_meta("children"):
 			child.queue_free()
+		effect.get_meta("children").clear()

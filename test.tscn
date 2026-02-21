@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://bxby0lylr2xnb" path="res://Scripts/barcode.gd" id="1_37kl0"]
 [ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://defjfh8xestnc" path="res://tower.tscn" id="3_6uqi0"]
-[ext_resource type="PackedScene" uid="uid://bcqh6sasjcgbc" path="res://tower.tscn" id="3_6uqi0"]
-[ext_resource type="Script" uid="uid://g7bnbd2yare0" path="res://Scripts/shopmanager.gd" id="3_g14j6"]
+[ext_resource type="Script" path="res://Scripts/shopmanager.gd" id="3_g14j6"]
 [ext_resource type="PackedScene" uid="uid://bdndrcj0hxo3" path="res://path.tscn" id="4_ykrsh"]
 [ext_resource type="Script" uid="uid://bhm1v0os055f7" path="res://Scripts/level_system.gd" id="5_g14j6"]
 
@@ -29,10 +28,10 @@ text = "test"
 [node name="test-folder" type="Node2D" parent="." unique_id=1503814230]
 
 [node name="Tower" parent="test-folder" unique_id=2047865917 instance=ExtResource("3_6uqi0")]
-position = Vector2(456, 156)
+position = Vector2(466, 159)
 
-[node name="Tower2" parent="test-folder" unique_id=1362054530 instance=ExtResource("3_6uqi0")]
-position = Vector2(708, 372)
+[node name="Tower2" parent="test-folder" unique_id=923631202 instance=ExtResource("3_6uqi0")]
+position = Vector2(708, 373)
 
 [node name="Path" parent="." unique_id=1027853351 instance=ExtResource("4_ykrsh")]
 script = ExtResource("5_g14j6")
