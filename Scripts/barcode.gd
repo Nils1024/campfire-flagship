@@ -56,7 +56,7 @@ func on_barcode_scanned(barcode: String) -> void:
 			codes_on_reload.append(barcode)
 			spawn_effect(code["file"])
 			remove_effect(code["file"])
-			await get_tree().create_timer(GlobalData.reload_time).timeout
+			await get_tree().create_timer(Shop.reloadtime).timeout
 			codes_on_reload.erase(barcode)
 			break
 	
@@ -82,3 +82,4 @@ func _on_end_area_area_entered(area: Area2D) -> void:
 	$HealthBar.value = GlobalData.health
 	if GlobalData.health <= 0.0:
 		get_tree().quit()
+		

@@ -5,6 +5,7 @@ var multiplier :float = 1.0
 var reloadtime : float = 1.0
 var towerRadius : float = 1.0
 var strenght : float = 1.0
+var points : float = 0.0
 
 enum barcodeState {
 	WAITING_FOR_TOWER,
@@ -41,9 +42,10 @@ func on_barcode_scanned(barcode: String) -> void:
 				print("Invalid tower barcode.")
 
 func is_valid_powerup(barcode: String) -> bool:
-	match barcode:
-		"FasterReload", "BiggerRadius", "MorePower", "2xPoints":
-			return true
+	if points > 5.0:
+		match barcode:
+			"FasterReload", "BiggerRadius", "MorePower", "2xPoints":
+				return true
 	return false
 
 
