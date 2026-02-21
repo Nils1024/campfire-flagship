@@ -30,6 +30,8 @@ func on_barcode_scanned(barcode: String) -> void:
 	# Do whatever you want with the barcode here
 	
 func spawn_effect(effect):
+	if len(effect.get_meta("children")) > 0:
+		print("DEATH")
 	var color_rect = effect.get_node("ColorRect")
 	var original_color = color_rect.color
 	color_rect.color = "Black"
