@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bdvuxog8j47gp"]
+
+[ext_resource type="Script" uid="uid://bxby0lylr2xnb" path="res://Scripts/barcode.gd" id="1_37kl0"]
+
+[node name="Test" type="Node2D" unique_id=1474481475]
+script = ExtResource("1_37kl0")
+
+[node name="Label" type="Label" parent="." unique_id=577376686]
+offset_left = 459.0
+offset_top = 229.0
+offset_right = 696.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 128
+text = "test"
