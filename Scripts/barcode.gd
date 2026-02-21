@@ -35,7 +35,8 @@ func _ready() -> void:
 	$HealthBar.max_value = GlobalData.health
 
 func _physics_process(delta):
-	$roundnum.text = str(GlobalData.roundnum)
+	$roundnum.text = "Round Number: " + str(GlobalData.roundnum)
+	$CurrentPoints.text = "Current Points: " + str(GlobalData.points)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -60,7 +61,6 @@ func on_barcode_scanned(barcode: String) -> void:
 			codes_on_reload.erase(barcode)
 			break
 	
-	$Label.text = "Scanned Code: %s" %barcode
 	await get_tree().create_timer(.01).timeout
 	# Do whatever you want with the barcode here
 	
@@ -72,10 +72,12 @@ func spawn_effect(effect):
 	color_rect.color = original_color
 	
 func remove_effect(tower):
+	
+	
 	tower.remove_children()
 		
 
-
+#end of screen
 func _on_end_area_area_entered(area: Area2D) -> void:
 	GlobalData.child_count -= 1
 	GlobalData.health -= 1.0

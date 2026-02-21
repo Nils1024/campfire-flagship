@@ -12,12 +12,14 @@ func _on_area_area_entered(area: Area2D) -> void:
 func _on_area_area_exited(area: Area2D) -> void:
 	var enemy = area.get_parent()
 	if enemy.is_in_group("Enemy"):
-		Shop.points += 1.0
+		
 		children.erase(enemy)
 
 func remove_children():
 	for child in children:
 		GlobalData.child_count -= 1
+		var amount = 1 * Shop.multiplier
+		GlobalData.points += amount
 		child.queue_free()
 	children.clear()
 		

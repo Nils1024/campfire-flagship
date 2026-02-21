@@ -5,7 +5,7 @@ var multiplier :float = 1.0
 var reloadtime : float = 1.0
 var towerRadius : float = 1.0
 var strenght : float = 1.0
-var points : float = 0.0
+
 
 enum barcodeState {
 	WAITING_FOR_TOWER,
@@ -42,10 +42,10 @@ func on_barcode_scanned(barcode: String) -> void:
 				print("Invalid tower barcode.")
 
 func is_valid_powerup(barcode: String) -> bool:
-	if points > 5.0:
-		match barcode:
-			"FasterReload", "BiggerRadius", "MorePower", "2xPoints":
-				return true
+	
+	match barcode:
+		"FasterReload", "BiggerRadius", "MorePower", "2xPoints":
+			return true
 	return false
 
 
@@ -55,20 +55,36 @@ func is_valid_tower(barcode: String) -> bool:
 			return true
 	return false
 
+var fastreloadprice := 5
+var biggerradiusprice := 5
+var morepowerprice := 5
+var twoxpointsprice := 15
 
 func apply_powerup_to_tower(powerup: String, tower: String) -> void:
 	print("Applying ", powerup, " to ", tower)
 	
 	match powerup:
 		"FasterReload":
-			if reloadtime != 0.1:
-				reloadtime = reloadtime - 0.1
+			if GlobalData.points >= fastreloadprice:
+				GlobalData.points =- fastreloadprice
+				fastreloadprice *= 2
+				if reloadtime != 0.1:
+					reloadtime = reloadtime - 0.1
 		"BiggerRadius":
-			towerRadius += .5
+			if GlobalData.points >= biggerradiusprice:
+				GlobalData.points =- biggerradiusprice
+				biggerradiusprice *= 2
+				towerRadius += .5
 		"MorePower":
-			strenght += 1
+			if GlobalData.points >= morepowerprice:
+				GlobalData.points =- morepowerprice
+				morepowerprice *= 2
+				strenght += 1
 		"2xPoints":
-			multiplier *= 2
+			if GlobalData.points >= twoxpointsprice:
+				GlobalData.points =- twoxpointsprice
+				twoxpointsprice *= 2
+				multiplier *= 2
 
 
 func reset_scan_state():

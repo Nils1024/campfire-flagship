@@ -25,5 +25,5 @@
 - shop, make way to track and have points, shop script on its own
 - physical controler, make it look trashed
 
-# Balancing
-- 
+# Shop Prices
+- Faster Reload - decreases by 1/10th of a second, 10

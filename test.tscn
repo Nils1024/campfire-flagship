@@ -19,14 +19,14 @@ offset_bottom = 40.0
 texture = ExtResource("2_8uh7m")
 script = ExtResource("3_g14j6")
 
-[node name="Label" type="Label" parent="." unique_id=577376686]
-offset_left = 642.0
-offset_top = -13.0
-offset_right = 1149.0
-offset_bottom = 87.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="CurrentPoints" type="Label" parent="." unique_id=577376686]
+offset_left = 848.0
+offset_top = -4.0
+offset_right = 1152.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.28627452, 0.20392157, 0.08627451, 1)
 theme_override_font_sizes/font_size = 32
-text = "test"
+text = "Current Points:"
 
 [node name="test-folder" type="Node2D" parent="." unique_id=1503814230]
 
@@ -49,13 +49,13 @@ position = Vector2(745, 536)
 script = ExtResource("5_g14j6")
 
 [node name="roundnum" type="Label" parent="." unique_id=261485593]
-offset_left = 251.0
-offset_top = 1.0
-offset_right = 758.0
-offset_bottom = 101.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 808.0
+offset_top = 450.0
+offset_right = 1315.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0.28558564, 0.20405293, 0.08847242, 1)
 theme_override_font_sizes/font_size = 32
-text = "test"
+text = "Round Number"
 
 [node name="EndArea" type="Area2D" parent="." unique_id=1183355282]
 
@@ -69,8 +69,8 @@ modulate = Color(0, 1, 0.14117648, 1)
 custom_minimum_size = Vector2(100, 0)
 offset_left = 16.0
 offset_top = 8.0
-offset_right = 116.0
-offset_bottom = 35.0
+offset_right = 188.0
+offset_bottom = 34.0
 step = 1.0
 value = 100.0
 show_percentage = false
