@@ -1,4 +1,6 @@
 extends Node
+var code1 : String = "889392021394"
+var code2: String = "992-00014-SIF"
 
 var barcode_buffer: String = ""
 
@@ -18,6 +20,12 @@ func _input(event: InputEvent) -> void:
 				barcode_buffer += ch
 
 func on_barcode_scanned(barcode: String) -> void:
+	if barcode == code1:
+		$"test-folder/1".color = "Black"
+	elif barcode == code2:
+		
+		$"test-folder/2".color = "Black"
+	
 	$Label.text = barcode
 	print("Scanned barcode: ", barcode)
 	# Do whatever you want with the barcode here
