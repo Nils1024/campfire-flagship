@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bxby0lylr2xnb" path="res://Scripts/barcode.gd" id="1_37kl0"]
 [ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_8uh7m"]
-[ext_resource type="PackedScene" uid="uid://bdndrcj0hxo3" path="res://path.tscn" id="3_6uqi0"]
-[ext_resource type="Script" uid="uid://b5p0dua5r3cuj" path="res://levelSystem.gd" id="4_ppyta"]
-[ext_resource type="PackedScene" uid="uid://cnu6na4dkqe4j" path="res://tower.tscn" id="3_6uqi0"]
+[ext_resource type="PackedScene" uid="uid://bcqh6sasjcgbc" path="res://tower.tscn" id="3_6uqi0"]
+[ext_resource type="PackedScene" uid="uid://bdndrcj0hxo3" path="res://path.tscn" id="4_ykrsh"]
+[ext_resource type="Script" uid="uid://bhm1v0os055f7" path="res://level_system.gd" id="5_g14j6"]
 
 [node name="Test" type="Node2D" unique_id=1474481475]
 script = ExtResource("1_37kl0")
@@ -35,7 +35,8 @@ offset_right = 469.0
 offset_bottom = 369.0
 color = Color(1, 1, 1, 0)
 
-[node name="Path" parent="." unique_id=1027853351 instance=ExtResource("3_6uqi0")]
-script = ExtResource("4_ppyta")
 [node name="Tower2" parent="test-folder" unique_id=146760862 instance=ExtResource("3_6uqi0")]
 position = Vector2(456, 405)
+
+[node name="Path" parent="." unique_id=1027853351 instance=ExtResource("4_ykrsh")]
+script = ExtResource("5_g14j6")
