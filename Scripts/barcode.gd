@@ -1,5 +1,5 @@
 extends Node
-var code1 : String = "889392021394"
+@export var code1 : String = "889392021394"
 var code2: String = "992-00014-SIF"
 
 var barcode_buffer: String = ""
@@ -7,8 +7,6 @@ var barcode_buffer: String = ""
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		var keycode = event.keycode
-		
-		# Enter key = barcode scan complete
 		if keycode == KEY_ENTER or keycode == KEY_KP_ENTER:
 			if barcode_buffer != "":
 				on_barcode_scanned(barcode_buffer)
