@@ -17,8 +17,10 @@
 - you get points for each enemy killed
 - points work on a seperate shop page, whihc when scanned can add things like bigger radius of tower power, fast reload for tower, and speed?
 - more enemys later, this is further down the lime, like faster enemys, stronger ones, boss enemy (it looks big and has a lot of health?)
-- death condition
+- death condition, too many enemys leak??
 
 # proposed how it works
 - towers, in one script contorling them, changed for each scene of said 5 towers
-- enemys is one scene
+- enemys is one scene, different propeties, all follow the same path
+- shop, make way to track and have points, shop script on its own
+- physical controler, make it look trashed

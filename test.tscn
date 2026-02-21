@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://bdndrcj0hxo3" path="res://path.tscn" id="3_6uqi0"]
 [ext_resource type="Script" uid="uid://b5p0dua5r3cuj" path="res://levelSystem.gd" id="4_ppyta"]
+[ext_resource type="PackedScene" uid="uid://cnu6na4dkqe4j" path="res://tower.tscn" id="3_6uqi0"]
 
 [node name="Test" type="Node2D" unique_id=1474481475]
 script = ExtResource("1_37kl0")
@@ -14,21 +15,18 @@ offset_bottom = 40.0
 texture = ExtResource("2_8uh7m")
 
 [node name="Label" type="Label" parent="." unique_id=577376686]
-offset_left = 1004.0
+offset_left = 642.0
 offset_top = -13.0
-offset_right = 1536.0
+offset_right = 1149.0
 offset_bottom = 87.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 32
 text = "test"
 
 [node name="test-folder" type="Node2D" parent="." unique_id=1503814230]
 
-[node name="1" type="ColorRect" parent="test-folder" unique_id=343753666]
-offset_left = 316.0
-offset_right = 472.0
-offset_bottom = 120.0
-color = Color(1, 1, 1, 0)
+[node name="Tower" parent="test-folder" unique_id=511707659 instance=ExtResource("3_6uqi0")]
+position = Vector2(424, 131)
 
 [node name="2" type="ColorRect" parent="test-folder" unique_id=1452808256]
 offset_left = 313.0
@@ -39,3 +37,5 @@ color = Color(1, 1, 1, 0)
 
 [node name="Path" parent="." unique_id=1027853351 instance=ExtResource("3_6uqi0")]
 script = ExtResource("4_ppyta")
+[node name="Tower2" parent="test-folder" unique_id=146760862 instance=ExtResource("3_6uqi0")]
+position = Vector2(456, 405)
