@@ -2,6 +2,43 @@
 
 [ext_resource type="Texture2D" uid="uid://btmeqits4fief" path="res://Assets/icon.svg" id="1_jnavc"]
 
+[sub_resource type="Animation" id="Animation_jnavc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ckofj"]
+resource_name = "Walk"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0xr8s"]
+_data = {
+&"RESET": SubResource("Animation_jnavc"),
+&"Walk": SubResource("Animation_ckofj")
+}
+
 [sub_resource type="Curve2D" id="Curve2D_ckofj"]
 bake_interval = 0.5
 _data = {
@@ -11,14 +48,17 @@ point_count = 28
 
 [node name="Path" type="Node2D" unique_id=1027853351]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=469397463]
+root_node = NodePath("../Path2D/PathFollow2D")
+libraries/ = SubResource("AnimationLibrary_0xr8s")
+
 [node name="Path2D" type="Path2D" parent="." unique_id=1246958165]
 position = Vector2(-7.9484863, -58.769382)
 curve = SubResource("Curve2D_ckofj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=396227718]
-position = Vector2(233.55905, 170.24643)
+position = Vector2(-11.051514, 167.76938)
 rotation = 1.5739819
-progress = 244.62325
 rotates = false
 loop = false
 
@@ -32,9 +72,9 @@ texture = ExtResource("1_jnavc")
 stretch_mode = 4
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" unique_id=708558935]
-position = Vector2(485.61636, 281.9771)
+position = Vector2(69.98962, 168.59006)
 rotation = -3.1352215
-progress = 570.2919
+progress = 81.04539
 rotates = false
 loop = false
 
@@ -46,3 +86,21 @@ offset_bottom = 192.0
 rotation = -3.1415927
 texture = ExtResource("1_jnavc")
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="Path2D" unique_id=291761001]
+position = Vector2(314.59976, 171.06712)
+rotation = -3.1352215
+progress = 325.6686
+rotates = false
+loop = false
+
+[node name="TextureRect2" type="TextureRect" parent="Path2D/PathFollow2D3" unique_id=798543468]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 192.0
+rotation = -3.1415927
+texture = ExtResource("1_jnavc")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true

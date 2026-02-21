@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bxby0lylr2xnb" path="res://Scripts/barcode.gd" id="1_37kl0"]
 [ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://bdndrcj0hxo3" path="res://path.tscn" id="3_6uqi0"]
+[ext_resource type="Script" uid="uid://b5p0dua5r3cuj" path="res://levelSystem.gd" id="4_ppyta"]
 
 [node name="Test" type="Node2D" unique_id=1474481475]
 script = ExtResource("1_37kl0")
@@ -34,3 +36,6 @@ offset_top = 249.0
 offset_right = 469.0
 offset_bottom = 369.0
 color = Color(1, 1, 1, 0)
+
+[node name="Path" parent="." unique_id=1027853351 instance=ExtResource("3_6uqi0")]
+script = ExtResource("4_ppyta")
