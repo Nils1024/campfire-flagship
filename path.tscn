@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bdndrcj0hxo3"]
+
+[ext_resource type="Texture2D" uid="uid://btmeqits4fief" path="res://Assets/icon.svg" id="1_jnavc"]
+
+[sub_resource type="Curve2D" id="Curve2D_ckofj"]
+bake_interval = 0.5
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -11.051514, 167.76938, 0, 0, 0, 0, 383.9485, 171.76938, 0, 0, 0, 0, 456.9485, 188.76938, 0, 0, 0, 0, 486.9485, 248.76938, 0, 0, 0, 0, 472.9485, 597.7694, 0, 0, 0, 0, 446.9485, 643.7694, 0, 0, 0, 0, 391.9485, 666.7694, 0, 0, 0, 0, 247.94849, 659.7694, 0, 0, 0, 0, 190.94849, 629.7694, 0, 0, 0, 0, 170.94849, 575.7694, 0, 0, 0, 0, 161.94849, 489.76938, 0, 0, 0, 0, 164.94849, 426.76938, 0, 0, 0, 0, 237.94849, 406.76938, 0, 0, 0, 0, 958.9485, 439.76938, 0, 0, 0, 0, 1008.9485, 416.76938, 0, 0, 0, 0, 1037.9485, 373.76938, 0, 0, 0, 0, 1033.9485, 229.76938, 0, 0, 0, 0, 1008.9485, 185.76938, 0, 0, 0, 0, 963.9485, 164.76938, 0, 0, 0, 0, 762.9485, 160.76938, 0, 0, 0, 0, 717.9485, 186.76938, 0, 0, 0, 0, 682.9485, 228.76938, 0, 0, 0, 0, 705.9485, 313.76938, 0, 0, 0, 0, 712.9485, 428.76938, 0, 0, 0, 0, 737.9485, 585.7694, 0, 0, 0, 0, 779.9485, 617.7694, 0, 0, 0, 0, 833.9485, 626.7694, 0, 0, 0, 0, 1210.9485, 623.7694)
+}
+point_count = 28
+
+[node name="Path" type="Node2D" unique_id=1027853351]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1246958165]
+position = Vector2(-7.9484863, -58.769382)
+curve = SubResource("Curve2D_ckofj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=396227718]
+position = Vector2(233.55905, 170.24643)
+rotation = 1.5739819
+progress = 244.62325
+rotates = false
+loop = false
+
+[node name="TextureRect2" type="TextureRect" parent="Path2D/PathFollow2D" unique_id=1352995793]
+offset_left = -64.0
+offset_top = 64.0
+offset_right = 64.0
+offset_bottom = 192.0
+rotation = -1.5707964
+texture = ExtResource("1_jnavc")
+stretch_mode = 4
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" unique_id=708558935]
+position = Vector2(485.61636, 281.9771)
+rotation = -3.1352215
+progress = 570.2919
+rotates = false
+loop = false
+
+[node name="TextureRect2" type="TextureRect" parent="Path2D/PathFollow2D2" unique_id=1848371996]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 192.0
+rotation = -3.1415927
+texture = ExtResource("1_jnavc")
+stretch_mode = 4
