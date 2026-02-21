@@ -4,6 +4,7 @@ var code2: String = "992-00014-SIF"
 
 var barcode_buffer: String = ""
 
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		var keycode = event.keycode
@@ -19,11 +20,17 @@ func _input(event: InputEvent) -> void:
 
 func on_barcode_scanned(barcode: String) -> void:
 	if barcode == code1:
-		$"test-folder/1".color = "Black"
+		spawn_effect($"test-folder/1")
 	elif barcode == code2:
-		
-		$"test-folder/2".color = "Black"
+		spawn_effect($"test-folder/2")
 	
 	$Label.text = barcode
 	print("Scanned barcode: ", barcode)
+	
 	# Do whatever you want with the barcode here
+	
+func spawn_effect(effect):
+	var original_color = effect.color
+	effect.color = "Black"
+	await get_tree().create_timer(.2).timeout #await animation end insteadd
+	effect.color = original_color
