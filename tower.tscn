@@ -3,20 +3,29 @@
 [ext_resource type="Script" uid="uid://7m2a3fq8wwo1" path="res://Scripts/tower.gd" id="1_k1sas"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k1sas"]
-radius = 117.34564
+radius = 62.03225
 
 [node name="Tower" type="Node2D" unique_id=2047865917]
 script = ExtResource("1_k1sas")
-metadata/children = []
 
 [node name="Area" type="Area2D" parent="." unique_id=1538556445]
 
 [node name="Collision" type="CollisionShape2D" parent="Area" unique_id=1692660343]
 shape = SubResource("CircleShape2D_k1sas")
 
+[node name="VisibleRect" type="ColorRect" parent="." unique_id=660532007]
+visible = false
+offset_left = -18.0
+offset_top = -16.0
+offset_right = 22.0
+offset_bottom = 24.0
+color = Color(0.827451, 0.2901961, 0, 1)
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1717540449]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -21.0
+offset_top = -16.0
+offset_right = 19.0
+offset_bottom = 24.0
 color = Color(1, 1, 1, 0)
 
 [connection signal="area_entered" from="Area" to="." method="_on_area_area_entered"]

@@ -1,5 +1,7 @@
 extends Node
 
+var enemies_found = []
+
 var barcode_buffer: String = ""
 
 enum barcodeState {

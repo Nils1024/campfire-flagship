@@ -28,10 +28,19 @@ text = "test"
 [node name="test-folder" type="Node2D" parent="." unique_id=1503814230]
 
 [node name="Tower" parent="test-folder" unique_id=2047865917 instance=ExtResource("3_6uqi0")]
-position = Vector2(466, 159)
+position = Vector2(458, 132)
 
 [node name="Tower2" parent="test-folder" unique_id=923631202 instance=ExtResource("3_6uqi0")]
-position = Vector2(708, 373)
+position = Vector2(182, 564)
+
+[node name="Tower3" parent="test-folder" unique_id=1305014235 instance=ExtResource("3_6uqi0")]
+position = Vector2(607, 361)
+
+[node name="Tower4" parent="test-folder" unique_id=1928979111 instance=ExtResource("3_6uqi0")]
+position = Vector2(1007, 123)
+
+[node name="Tower5" parent="test-folder" unique_id=443752210 instance=ExtResource("3_6uqi0")]
+position = Vector2(745, 536)
 
 [node name="Path" parent="." unique_id=1027853351 instance=ExtResource("4_ykrsh")]
 script = ExtResource("5_g14j6")

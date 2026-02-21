@@ -2,9 +2,35 @@ extends Node
 @export var code1 : String = "889392021394"
 var code2: String = "992-00014-SIF"
 
+@onready var codes = {
+	"code1":{
+		"code": "889392021394",
+		"file": $"test-folder/Tower"
+	},
+	"code2":{
+		"code": "198926005800",
+		"file": $"test-folder/Tower2"
+	},
+	"code3":{
+		"code": "992-00014-SIF",
+		"file": $"test-folder/Tower3"
+	},
+	"code4":{
+		"code": "024100122615",
+		"file": $"test-folder/Tower4"
+	},
+	"code5":{
+		"code": "049000050141",
+		"file": $"test-folder/Tower5"
+	}
+}
+
 var barcode_buffer: String = ""
 #effect,explosion,actual effect
 signal areaBodyEntered
+
+func _ready() -> void:
+	print(codes["code1"])
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -20,14 +46,11 @@ func _input(event: InputEvent) -> void:
 				barcode_buffer += ch
 
 func on_barcode_scanned(barcode: String) -> void:
-	if barcode == code1:
-		var folder = $"test-folder/Tower"
-		spawn_effect(folder)
-		remove_effect(folder)
-	elif barcode == code2:
-		var folder = $"test-folder/Tower2"
-		spawn_effect(folder)
-		remove_effect(folder)
+	for code in codes.values():
+		if code["code"] == barcode:
+			spawn_effect(code["file"])
+			remove_effect(code["file"])
+			break
 	
 	$Label.text = "Scanned Code: %s" %barcode
 	await get_tree().create_timer(.01).timeout
@@ -40,8 +63,6 @@ func spawn_effect(effect):
 	await get_tree().create_timer(.2).timeout #await animation end insteadd
 	color_rect.color = original_color
 	
-func remove_effect(effect):
-	if is_instance_valid(effect):
-		for child in effect.get_meta("children"):
-			child.queue_free()
-		effect.get_meta("children").clear()
+func remove_effect(tower):
+	tower.remove_children()
+		
