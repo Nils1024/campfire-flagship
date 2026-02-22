@@ -4,8 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://biyg2j5sw6dtl" path="res://shop.tscn" id="2_0m0f1"]
 [ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://defjfh8xestnc" path="res://tower.tscn" id="3_6uqi0"]
+[ext_resource type="AudioStream" uid="uid://c00t8302j1mqb" path="res://Assets/chickensound1.mp3" id="3_a3se8"]
 [ext_resource type="Script" uid="uid://g7bnbd2yare0" path="res://Scripts/shopmanager.gd" id="3_g14j6"]
+[ext_resource type="AudioStream" uid="uid://6v46sa4copjm" path="res://Assets/chickensound2.mp3" id="4_uty7l"]
 [ext_resource type="PackedScene" uid="uid://bdndrcj0hxo3" path="res://path.tscn" id="4_ykrsh"]
+[ext_resource type="AudioStream" uid="uid://ccnb1a87721lg" path="res://Assets/chickensound3.mp3" id="5_45l4g"]
 [ext_resource type="Script" uid="uid://bhm1v0os055f7" path="res://Scripts/level_system.gd" id="5_g14j6"]
 [ext_resource type="Texture2D" uid="uid://cy4m7ws21pjyg" path="res://Assets/Towers/celciustower.png" id="5_vbegm"]
 [ext_resource type="Texture2D" uid="uid://bx8btic8iv2io" path="res://Assets/Towers/strawberrything.png" id="6_77dp3"]
@@ -20,6 +23,7 @@ size = Vector2(111, 141)
 [node name="Test" type="Node2D" unique_id=1474481475]
 script = ExtResource("1_37kl0")
 shop_scene = ExtResource("2_0m0f1")
+chicken_sounds = [ExtResource("3_a3se8"), ExtResource("4_uty7l"), ExtResource("5_45l4g")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2108762081]
 offset_right = 40.0
@@ -125,8 +129,11 @@ text = "Shop"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=525206294]
 stream = ExtResource("12_5tkv4")
+volume_db = -6.0
 autoplay = true
 parameters/looping = true
+
+[node name="ChickenSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=914380521]
 
 [connection signal="area_entered" from="EndArea" to="." method="_on_end_area_area_entered"]
 [connection signal="pressed" from="KeyBoardStuff/Pause" to="." method="_on_pause_pressed"]
