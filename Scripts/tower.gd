@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var children = []
-# Called when the node enters the scene tree for the first time
 
 func _process(_delta):
 	$Area.scale = Vector2(Shop.towerRadius, Shop.towerRadius)
@@ -33,4 +32,3 @@ func remove_children():
 	for child in children:
 		if children_to_erase.has(child):
 			children.erase(child)
-		

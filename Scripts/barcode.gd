@@ -3,6 +3,9 @@ extends Node
 var code2: String = "992-00014-SIF"
 var codes_on_reload = []
 
+@export var shop_scene : PackedScene
+var shop_instance : Node = null
+
 @onready var codes = {
 	"code1":{
 		"code": "889392021394",
@@ -103,9 +106,18 @@ func _on_end_area_area_entered(_area: Area2D) -> void:
 		GlobalData.reset_variables()
 		get_tree().change_scene_to_file("res://game_over.tscn")
 	
-		
-		
-
 
 func _on_pause_pressed():
-	pass # Replace with function body.
+	
+	if shop_instance:
+		shop_instance.queue_free()
+		shop_instance = null
+		get_tree().paused = false
+		return
+		
+	get_tree().paused = true
+	shop_instance = shop_scene.instantiate()
+	add_child(shop_instance)
+	
+	shop_instance.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	

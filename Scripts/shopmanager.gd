@@ -91,3 +91,18 @@ func apply_powerup(powerup: String):
 func reset_scan_state():
 	pending_powerup = ""
 	current_state = BarcodeState.WAITING_FOR_POWERUP
+	
+#physical shop
+func select_powerup(powerup_name: String):
+	if powerups.has(powerup_name):
+		pending_powerup = powerup_name
+		current_state = BarcodeState.WAITING_FOR_TOWER
+		print("Selected", powerup_name, "- now choose a tower.")
+
+func select_tower(tower_name: String):
+	if current_state == BarcodeState.WAITING_FOR_TOWER:
+		if tower_name in valid_towers:
+			apply_powerup(pending_powerup)
+			reset_scan_state()
+		else:
+			print("Invalid tower.")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://biyg2j5sw6dtl"]
 
-[ext_resource type="Script" uid="uid://crwgdug85qug6" path="res://Scripts/GameOverStats.gd" id="1_e7rdd"]
+[ext_resource type="Script" uid="uid://botrj47ny465" path="res://Scripts/shop.gd" id="1_e7rdd"]
 [ext_resource type="Texture2D" uid="uid://ddalg3jdkhs0t" path="res://Assets/thened.png" id="2_blqjs"]
 
 [node name="Shop" type="Control" unique_id=2014165722]
@@ -10,13 +10,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_e7rdd")
 
 [node name="Dim" type="ColorRect" parent="." unique_id=259589223]
 layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 648.0
 color = Color(0.0627451, 0.0627451, 0.0627451, 0.6862745)
-script = ExtResource("1_e7rdd")
 
 [node name="TextureRect" type="TextureRect" parent="Dim" unique_id=844833303]
 modulate = Color(0.49433076, 0.49433076, 0.4943307, 1)
@@ -100,7 +100,7 @@ offset_right = 309.0
 offset_bottom = 436.0
 text = "Celsius"
 
-[node name="Celsius2" type="Button" parent="Dim/Buttons/Towers" unique_id=2036830684]
+[node name="Cheezits" type="Button" parent="Dim/Buttons/Towers" unique_id=2036830684]
 layout_mode = 0
 offset_left = 774.0
 offset_top = 424.0
@@ -108,7 +108,7 @@ offset_right = 847.0
 offset_bottom = 455.0
 text = "Cheezits"
 
-[node name="Celsius3" type="Button" parent="Dim/Buttons/Towers" unique_id=661062780]
+[node name="YubiKey" type="Button" parent="Dim/Buttons/Towers" unique_id=661062780]
 layout_mode = 0
 offset_left = 532.0
 offset_top = 468.0
@@ -116,7 +116,7 @@ offset_right = 595.0
 offset_bottom = 499.0
 text = "YubiKey"
 
-[node name="Celsius4" type="Button" parent="Dim/Buttons/Towers" unique_id=1640912552]
+[node name="Numpad" type="Button" parent="Dim/Buttons/Towers" unique_id=1640912552]
 layout_mode = 0
 offset_left = 265.0
 offset_top = 541.0
@@ -124,10 +124,29 @@ offset_right = 328.0
 offset_bottom = 572.0
 text = "NumPad"
 
-[node name="Celsius5" type="Button" parent="Dim/Buttons/Towers" unique_id=1296730744]
+[node name="Coke" type="Button" parent="Dim/Buttons/Towers" unique_id=1296730744]
 layout_mode = 0
 offset_left = 778.0
 offset_top = 545.0
 offset_right = 854.0
 offset_bottom = 576.0
 text = "Coke"
+
+[node name="close" type="Button" parent="Dim" unique_id=108531580]
+layout_mode = 0
+offset_left = 933.0
+offset_top = 40.0
+offset_right = 1099.0
+offset_bottom = 156.0
+text = "close shop"
+
+[connection signal="pressed" from="Dim/Buttons/FasterReload" to="." method="_on_faster_reload_pressed"]
+[connection signal="pressed" from="Dim/Buttons/IncreaseRadius" to="." method="_on_increase_radius_pressed"]
+[connection signal="pressed" from="Dim/Buttons/IncreaseDamage" to="." method="_on_increase_damage_pressed"]
+[connection signal="pressed" from="Dim/Buttons/2xPoints" to="." method="_on_x_points_pressed"]
+[connection signal="pressed" from="Dim/Buttons/Towers/Celsius" to="." method="_on_Celsius_pressed"]
+[connection signal="pressed" from="Dim/Buttons/Towers/Cheezits" to="." method="_on_Cheezits_pressed"]
+[connection signal="pressed" from="Dim/Buttons/Towers/YubiKey" to="." method="_on_Yubikey_pressed"]
+[connection signal="pressed" from="Dim/Buttons/Towers/Numpad" to="." method="_on_Numpad_pressed"]
+[connection signal="pressed" from="Dim/Buttons/Towers/Coke" to="." method="_on_Coke_pressed"]
+[connection signal="pressed" from="Dim/close" to="." method="_on_close_pressed"]

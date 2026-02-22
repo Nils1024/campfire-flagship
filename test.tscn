@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bdvuxog8j47gp"]
 
 [ext_resource type="Script" uid="uid://bxby0lylr2xnb" path="res://Scripts/barcode.gd" id="1_37kl0"]
+[ext_resource type="PackedScene" uid="uid://biyg2j5sw6dtl" path="res://shop.tscn" id="2_0m0f1"]
 [ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://defjfh8xestnc" path="res://tower.tscn" id="3_6uqi0"]
 [ext_resource type="Script" uid="uid://g7bnbd2yare0" path="res://Scripts/shopmanager.gd" id="3_g14j6"]
@@ -18,6 +19,7 @@ size = Vector2(111, 141)
 
 [node name="Test" type="Node2D" unique_id=1474481475]
 script = ExtResource("1_37kl0")
+shop_scene = ExtResource("2_0m0f1")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2108762081]
 offset_right = 40.0
@@ -119,7 +121,7 @@ offset_right = 663.0
 offset_bottom = 622.0
 theme_override_colors/font_color = Color(0.7882353, 0.20392157, 0.08627451, 1)
 theme_override_font_sizes/font_size = 32
-text = "Pause"
+text = "Shop"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=525206294]
 stream = ExtResource("12_5tkv4")
