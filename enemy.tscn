@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://pj7mkvu78yqm" path="res://Assets/trash/3.png" id="4_3yqyl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vedim"]
-radius = 107.51744
+radius = 44.0
 
 [sub_resource type="Animation" id="Animation_k1sas"]
 length = 0.001
