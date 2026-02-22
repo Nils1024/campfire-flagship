@@ -27,29 +27,28 @@ var codes_on_reload = []
 }
 
 var barcode_buffer: String = ""
-#effect,explosion,actual effect
-signal areaBodyEntered
+
 
 func _ready() -> void:
 	$HealthBar.value = GlobalData.health
 	$HealthBar.max_value = GlobalData.health
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	$roundnum.text = "Round Number: " + str(GlobalData.roundnum)
 	$CurrentPoints.text = "Current Points: " + str(GlobalData.points)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		var keycode = event.keycode
-		
 		if keycode == KEY_ENTER or keycode == KEY_KP_ENTER:
-			if barcode_buffer.strip_edges() != "":
-				on_barcode_scanned(barcode_buffer.strip_edges())
+			if barcode_buffer != "":
+				on_barcode_scanned(barcode_buffer)
 				barcode_buffer = ""
 		else:
-			
-			if event.unicode > 31 and event.unicode < 127:
-				barcode_buffer += char(event.unicode)
+			# Append the character to the buffer
+			var ch = char(event.unicode)
+			if event.unicode > 0:
+				barcode_buffer += ch
 
 func on_barcode_scanned(barcode: String) -> void:
 	for code in codes.values():
@@ -87,8 +86,9 @@ func remove_effect(tower):
 		
 
 #end of screen
-func _on_end_area_area_entered(area: Area2D) -> void:
+func _on_end_area_area_entered(_area: Area2D) -> void:
 	GlobalData.child_count -= 1
+	@warning_ignore("narrowing_conversion")
 	GlobalData.health -= 1.0
 	$HealthBar.value = GlobalData.health
 	$HealthBar/HealthLabel.text = "Health = " + str(GlobalData.health)
