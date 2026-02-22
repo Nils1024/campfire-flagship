@@ -17,11 +17,12 @@ func _input(event: InputEvent) -> void:
 func on_barcode_scanned(barcode: String) -> void:
 	match barcode:
 		"StartGame": 
+			Keyboard.keyboard_mode = false
 			await get_tree().create_timer(3).timeout
 			get_tree().change_scene_to_file("res://test.tscn")
 
 
 func _on_button_pressed():
-	Keyboard.keyboard_mode = false
+	Keyboard.keyboard_mode = true
 	await get_tree().create_timer(3).timeout
 	get_tree().change_scene_to_file("res://test.tscn")
