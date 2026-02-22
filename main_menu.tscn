@@ -3,6 +3,145 @@
 [ext_resource type="Script" uid="uid://dua7qsk1ktour" path="res://main_menu.gd" id="1_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_jix8l"]
 [ext_resource type="Texture2D" uid="uid://cfrtkq2rlffi8" path="res://Assets/Towers/wordmark.svg" id="3_glbon"]
+[ext_resource type="Texture2D" uid="uid://b3fjivtvaanbb" path="res://Assets/bloodsplatter.png" id="4_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://cotge6mrnhrxj" path="res://Assets/angrychicken.png" id="5_qe12f"]
+[ext_resource type="Texture2D" uid="uid://diwcna5ykop6d" path="res://Assets/Frame 1.png" id="6_8qtwp"]
+
+[sub_resource type="Animation" id="Animation_vxl6d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BackgroundColor:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["A"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_eski5"]
+resource_name = "Start"
+length = 4.521969
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 8.033334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BackgroundColor:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.13725491, 0, 0, 0.92156863), Color(0.30588236, 0, 0, 0.84313726), Color(0.30588236, 0, 0, 0.627451)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.6613889, 2.7113886, 2.7613888, 2.811389, 2.8613892, 2.9113889, 2.9613886, 3.0113888, 3.061389, 3.1113892, 3.1613889, 3.2113886, 3.2613888, 3.311389, 3.3613892, 3.4113889, 3.4613886, 3.5113888, 3.561389, 3.6113892, 3.6613889, 3.7113886, 3.7613888),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "A", "AG", "AGH", "AGHG", "AGHGH", "AGHGHG", "AGHGHGG", "AGHGHGGH", "AGHGHGGHH", "AGHGHGGHHG", "AGHGHGGHHGG", "AGHGHGGHHGGH", "AGHGHGGHHGGHH", "AGHGHGGHHGGHHG", "AGHGHGGHHGGHHGH", "AGHGHGGHHGGHHGHG", "AGHGHGGHHGGHHGHGH", "AGHGHGGHHGGHHGHGHH", "AGHGHGGHHGGHHGHGHHG", "AGHGHGGHHGGHHGHGHHGG", "AGHGHGGHHGGHHGHGHHGGH", "AGHGHGGHHGGHHGHGHHGGHH", "AGHGHGGHHGGHHGHGHHGGHHG", "H", "HU", "HUR", "HURT", "HURTS", "A", "AG", "AGH", "AGHG", "AGHGH", "AGHGHG", "AGHGHGG", "AGHGHGGH", "AGHGHGGHH", "AGHGHGGHHG", "AGHGHGGHHGG", "AGHGHGGHHGGH", "AGHGHGGHHGGHH", "AGHGHGGHHGGHHG", "AGHGHGGHHGGHHGH", "AGHGHGGHHGGHHGHG", "AGHGHGGHHGGHHGHGH", "AGHGHGGHHGGHHGHGHH", "AGHGHGGHHGGHHGHGHHG", "AGHGHGGHHGGHHGHGHHGG", "AGHGHGGHHGGHHGHGHHGGH", "AGHGHGGHHGGHHGHGHHGGHH", "AGHGHGGHHGGHHGHGHHGGHHG"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.4500003, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dy7ct"]
+_data = {
+&"RESET": SubResource("Animation_vxl6d"),
+&"Start": SubResource("Animation_eski5")
+}
+
+[sub_resource type="QuadMesh" id="QuadMesh_0o4t1"]
 
 [node name="MainMenu" type="Node2D" unique_id=961337452]
 script = ExtResource("1_fu7sn")
@@ -64,5 +203,45 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "or click here for keybaord/mouse"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1045794706]
+visible = false
+
+[node name="Bloodsplatter" type="Sprite2D" parent="Node2D" unique_id=1954589022]
+position = Vector2(571, 325.50003)
+scale = Vector2(1.3741007, 1.0558293)
+texture = ExtResource("4_nlkkf")
+
+[node name="Angrychicken" type="Sprite2D" parent="Node2D" unique_id=1867938191]
+position = Vector2(577, 354)
+texture = ExtResource("5_qe12f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=93530068]
+root_node = NodePath("../Angrychicken")
+libraries/ = SubResource("AnimationLibrary_dy7ct")
+
+[node name="TextureRect" type="TextureRect" parent="Node2D" unique_id=1956303556]
+visible = false
+offset_left = 490.0
+offset_top = 47.0
+offset_right = 804.0
+offset_bottom = 258.0
+texture = ExtResource("6_8qtwp")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1932210726]
+visible = false
+offset_left = 518.0
+offset_top = 66.0
+offset_right = 786.0
+offset_bottom = 199.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "A"
+
+[node name="BackgroundColor" type="MeshInstance2D" parent="Node2D" unique_id=568789262]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(575, 324.00003)
+scale = Vector2(1152, 648)
+mesh = SubResource("QuadMesh_0o4t1")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

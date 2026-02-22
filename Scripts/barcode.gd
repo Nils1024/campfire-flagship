@@ -36,6 +36,7 @@ var barcode_buffer: String = ""
 @export var chicken_sounds = []
 
 func _ready() -> void:
+	
 	if Keyboard.keyboard_mode == true:
 		keybaordstuff.visible = true
 	
