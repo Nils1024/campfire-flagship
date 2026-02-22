@@ -4,9 +4,14 @@ var roundnum
 var spawn_amount: int
 var child_count: int
 var health : int
-var points
+
+var points : int
 var mutation_chance: int
 var mutations = ["SPEED","HEALTH"]
+
+
+
+
 
 func _ready():
 	reset_variables()

@@ -1,11 +1,8 @@
 extends ColorRect
 
+@onready var roundreached := $RoundReached
+@onready var totalpoints := $TotalPoints
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	roundreached.text = "Highest Round Reached: " + str(GlobalData.roundnum)
+	totalpoints.text = "Ending Amount of Points: " + str(GlobalData.points)

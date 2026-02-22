@@ -30,6 +30,7 @@ var barcode_buffer: String = ""
 
 
 func _ready() -> void:
+	add_to_group("BarcodeManager")
 	$HealthBar.value = GlobalData.health
 	$HealthBar.max_value = GlobalData.health
 
@@ -38,6 +39,8 @@ func _physics_process(_delta):
 	$CurrentPoints.text = "Current Points: " + str(GlobalData.points)
 
 func _input(event: InputEvent) -> void:
+	if Keyboard.keyboard_mode:
+		return
 	if event is InputEventKey and event.pressed:
 		var keycode = event.keycode
 		if keycode == KEY_ENTER or keycode == KEY_KP_ENTER:

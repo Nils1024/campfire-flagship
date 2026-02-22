@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dua7qsk1ktour" path="res://main_menu.gd" id="1_ccer4"]
 [ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_8u835"]
+[ext_resource type="Script" uid="uid://crwgdug85qug6" path="res://Scripts/GameOverStats.gd" id="3_8u835"]
 [ext_resource type="Texture2D" uid="uid://ddalg3jdkhs0t" path="res://Assets/thened.png" id="3_ftari"]
 
 [node name="GameOver" type="Node2D" unique_id=961337452]
@@ -17,6 +18,7 @@ layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 648.0
 color = Color(0.0627451, 0.0627451, 0.0627451, 0.6862745)
+script = ExtResource("3_8u835")
 
 [node name="TextureRect" type="TextureRect" parent="BG/Dim" unique_id=601764656]
 modulate = Color(0.49433076, 0.49433076, 0.4943307, 1)
