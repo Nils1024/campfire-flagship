@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 				"SPEED":
 					animation_player.speed_scale *= 2
 				"HEALTH":
+					enemy.scale *= 1.5
 					enemy.set_meta("HEALTH", 2)
 		else:
 			enemy.set_meta("Mutation","None")
