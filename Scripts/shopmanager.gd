@@ -3,7 +3,7 @@ extends Node
 var barcode_buffer := ""
 
 var multiplier: float = 1.0
-var reloadtime: float = 1.0
+var reloadtime: float = 1.3
 var towerRadius: float = 1.0
 var strenght: float = 1.0
 
