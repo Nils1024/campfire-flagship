@@ -75,12 +75,12 @@ horizontal_alignment = 1
 
 [node name="RoundReached" type="Label" parent="BG/Dim" unique_id=1123355951]
 layout_mode = 0
-offset_left = 301.0
+offset_left = 279.0
 offset_top = 199.0
-offset_right = 542.0
+offset_right = 557.0
 offset_bottom = 244.0
 theme_override_font_sizes/font_size = 32
-text = "Round Reached"
+text = "Round Reached: X"
 
 [node name="TotalPoints" type="Label" parent="BG/Dim" unique_id=1952338630]
 layout_mode = 0
@@ -89,4 +89,4 @@ offset_top = 198.0
 offset_right = 869.0
 offset_bottom = 243.0
 theme_override_font_sizes/font_size = 32
-text = "Total Points"
+text = "Total Points: X"

@@ -11,17 +11,16 @@ C: Numpad
 G: YubiKey
 M: Cheez-it
 U: Cola
-Space: Open the shop
-
-(This game is meant to be played with a barcode scanner)
 	
 ## How to play
 1. Start the game
 2. Get points by eliminating all enemys by selecting the right tower with the barcode scanner
-3. Spend you points on upgrades
+3. Spend your points on upgrades
 4. Survive as long as you can
 	
 ## Images
 
-(Real controller)[/github/controller]
-()[]
+![controller](/github/controller)
+![start](./github/start.png)
+![ingame](./github/ingame.png)
+![end](./github/end.png)
