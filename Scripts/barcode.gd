@@ -41,15 +41,15 @@ func _physics_process(delta):
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		var keycode = event.keycode
+		
 		if keycode == KEY_ENTER or keycode == KEY_KP_ENTER:
-			if barcode_buffer != "":
-				on_barcode_scanned(barcode_buffer)
+			if barcode_buffer.strip_edges() != "":
+				on_barcode_scanned(barcode_buffer.strip_edges())
 				barcode_buffer = ""
 		else:
-			# Append the character to the buffer
-			var ch = char(event.unicode)
-			if event.unicode > 0:
-				barcode_buffer += ch
+			
+			if event.unicode > 31 and event.unicode < 127:
+				barcode_buffer += char(event.unicode)
 
 func on_barcode_scanned(barcode: String) -> void:
 	for code in codes.values():
@@ -64,12 +64,21 @@ func on_barcode_scanned(barcode: String) -> void:
 	await get_tree().create_timer(.01).timeout
 	# Do whatever you want with the barcode here
 	
-func spawn_effect(effect):
-	var color_rect = effect.get_node("ColorRect")
-	var original_color = color_rect.color
-	color_rect.color = "Black"
-	await get_tree().create_timer(.2).timeout #await animation end insteadd
-	color_rect.color = original_color
+func spawn_effect(tower):
+	var sprite = tower.get_node("Sprite2D")
+	
+	var spin_time = 0.3
+	var spin_speed = 1500.0 # degrees per second
+	
+	var elapsed = 0.0
+	
+	while elapsed < spin_time:
+		var delta = get_process_delta_time()
+		sprite.rotation_degrees += spin_speed * delta
+		elapsed += delta
+		await get_tree().process_frame
+	
+	sprite.rotation_degrees = 0
 	
 func remove_effect(tower):
 	
@@ -82,6 +91,7 @@ func _on_end_area_area_entered(area: Area2D) -> void:
 	GlobalData.child_count -= 1
 	GlobalData.health -= 1.0
 	$HealthBar.value = GlobalData.health
+	$HealthBar/HealthLabel.text = "Health = " + str(GlobalData.health)
 	if GlobalData.health <= 0.0:
 		get_tree().quit()
 		

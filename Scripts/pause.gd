@@ -24,10 +24,10 @@ func _input(event: InputEvent) -> void:
 
 func on_barcode_scanned(barcode: String) -> void:
 	match barcode:
-		"06827465": 
+		"PauseGame": 
 			pause_game()
 			
-		"TowerFive": 
+		"StartGame": 
 			play_game()
 
 
