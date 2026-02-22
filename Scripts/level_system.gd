@@ -31,6 +31,7 @@ func _process(delta: float) -> void:
 					animation_player.speed_scale *= 1.5
 				"HEALTH":
 					var scale = [GlobalData.min_scale,GlobalData.max_scale].pick_random()
+					scale = clamp(scale,GlobalData.min_scale,3.0)
 					enemy.scale *= scale
 					set_meta("HEALTH", 1+(scale-1)/GlobalData.scale_increase)
 		else:
