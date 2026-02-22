@@ -4,8 +4,8 @@ var barcode_buffer: String = ""
 var multiplier :float = 1.0
 var reloadtime : float = 1.0
 var towerRadius : float = 1.0
-var strenght : float = 1.0 
-
+var strenght : float = 1.0
+var points : float = 0.0
 
 enum barcodeState {
 	WAITING_FOR_TOWER,
