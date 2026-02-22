@@ -21,7 +21,7 @@ func next_round():
 	@warning_ignore("narrowing_conversion")
 	spawn_amount *= 1.5
 	child_count = spawn_amount
-	mutation_chance += 5
+	mutation_chance += 4
 
 func reset_variables():
 	mutation_chance = 0
