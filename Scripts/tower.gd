@@ -3,7 +3,7 @@ extends Node2D
 @onready var children = []
 # Called when the node enters the scene tree for the first time
 
-func _process(delta):
+func _process(_delta):
 	$Area.scale = Vector2(Shop.towerRadius, Shop.towerRadius)
 
 func _on_area_area_entered(area: Area2D) -> void:
