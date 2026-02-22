@@ -1,15 +1,9 @@
 extends Node
 
-var keyboard_mode := true
+var keyboard_mode := false
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
-
-
-func toggle_mode():
-	keyboard_mode = !keyboard_mode
-	print("Keyboard Mode:", keyboard_mode)
-
 
 func _input(event):
 	if not keyboard_mode:
@@ -19,12 +13,12 @@ func _input(event):
 		return
 	
 	match event.keycode:
-		KEY_1: trigger_tower("code1")
-		KEY_2: trigger_tower("code2")
-		KEY_3: trigger_tower("code3")
-		KEY_4: trigger_tower("code4")
-		KEY_5: trigger_tower("code5")
-		KEY_F10: toggle_mode()
+		KEY_E: trigger_tower("code1")
+		KEY_C: trigger_tower("code2")
+		KEY_G: trigger_tower("code3")
+		KEY_U: trigger_tower("code4")
+		KEY_M: trigger_tower("code5")
+
 
 
 func trigger_tower(code_name: String):

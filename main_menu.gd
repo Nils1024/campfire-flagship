@@ -19,3 +19,9 @@ func on_barcode_scanned(barcode: String) -> void:
 		"StartGame": 
 			await get_tree().create_timer(3).timeout
 			get_tree().change_scene_to_file("res://test.tscn")
+
+
+func _on_button_pressed():
+	Keyboard.keyboard_mode = false
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file("res://test.tscn")
