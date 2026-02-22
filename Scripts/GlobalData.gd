@@ -9,10 +9,6 @@ var points : int
 var mutation_chance: int
 var mutations = ["SPEED","HEALTH"]
 
-
-
-
-
 func _ready():
 	reset_variables()
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +20,7 @@ func next_round():
 	mutation_chance += 6
 
 func reset_variables():
-	mutation_chance = 100
+	mutation_chance = 0
 	roundnum = 1
 	spawn_amount = 5
 	child_count = spawn_amount
