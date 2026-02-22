@@ -33,6 +33,7 @@ var shop_instance : Node = null
 
 var barcode_buffer: String = ""
 
+@export var chicken_sounds = []
 
 func _ready() -> void:
 	if Keyboard.keyboard_mode == true:
@@ -62,6 +63,8 @@ func _input(event: InputEvent) -> void:
 				barcode_buffer += ch
 
 func on_barcode_scanned(barcode: String) -> void:
+	$ChickenSoundPlayer.stream = chicken_sounds.pick_random()
+	$ChickenSoundPlayer.play()
 	for code in codes.values():
 		if code["code"] == barcode and not codes_on_reload.has(barcode):
 			codes_on_reload.append(barcode)
