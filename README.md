@@ -1,3 +1,16 @@
+# Flagship - Scrapyard
+Tower defense game but with barcode scanners
+
+itch.io:
+	
+## How to play
+1. Start the game
+2. Get points by eliminating all enemys by selecting the right tower with the barcode scanner
+3. Spend you points on upgrades
+	
+## Images
+
+
 # To-Do List
 - Set up enemys and their path
 - set up reloading for each tower
