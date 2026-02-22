@@ -27,11 +27,14 @@ func _input(event: InputEvent) -> void:
 
 func on_barcode_scanned(barcode: String) -> void:
 	match barcode:
-		"PauseGame": 
-			pause_game()
+		"PauseGame":
+			if current_state == barcodeState.PASUE:
+				play_game()
+			else:
+				pause_game()
 			
-		"StartGame": 
-			play_game()
+		#"StartGame": 
+			#play_game()
 
 
 func pause_game():
