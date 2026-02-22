@@ -124,6 +124,7 @@ text = "Pause"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=525206294]
 stream = ExtResource("12_5tkv4")
 autoplay = true
+parameters/looping = true
 
 [connection signal="area_entered" from="EndArea" to="." method="_on_end_area_area_entered"]
 [connection signal="pressed" from="KeyBoardStuff/Pause" to="." method="_on_pause_pressed"]
