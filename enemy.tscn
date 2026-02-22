@@ -61,11 +61,6 @@ color = Color(1, 1, 1, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=224243253]
 libraries/ = SubResource("AnimationLibrary_stebd")
 
-[node name="Label" type="Label" parent="." unique_id=556751633]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Enemy"
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=838191717]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_iifgy")
