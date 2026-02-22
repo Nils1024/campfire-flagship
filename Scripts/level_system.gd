@@ -40,7 +40,8 @@ func _process(delta: float) -> void:
 		children.append(enemy)
 
 func add():
-	var new_tower = tower_scene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
+	var new_tower = tower_scene.instantiate()
+	#var new_tower = tower_scene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 	new_tower.add_to_group("Enemy")
 	spawn_queue.append(new_tower)
 
