@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 			var mutation = GlobalData.mutations.pick_random()
 			match mutation:
 				"SPEED":
-					animation_player.speed_scale *= 2
+					animation_player.speed_scale *= 1.5
 				"HEALTH":
 					var scale = [GlobalData.min_scale,GlobalData.max_scale].pick_random()
 					enemy.scale *= scale
