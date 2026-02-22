@@ -80,8 +80,6 @@ func spawn_effect(tower):
 	sprite.rotation_degrees = 0
 	
 func remove_effect(tower):
-	
-	
 	tower.remove_children()
 		
 
