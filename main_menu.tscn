@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3fjivtvaanbb" path="res://Assets/bloodsplatter.png" id="4_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://cotge6mrnhrxj" path="res://Assets/angrychicken.png" id="5_qe12f"]
 [ext_resource type="Texture2D" uid="uid://diwcna5ykop6d" path="res://Assets/Frame 1.png" id="6_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://dcjmb201ftgx2" path="res://Assets/mrbullet.png" id="7_qe12f"]
 
 [sub_resource type="Animation" id="Animation_vxl6d"]
 length = 0.001
@@ -243,5 +244,9 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(575, 324.00003)
 scale = Vector2(1152, 648)
 mesh = SubResource("QuadMesh_0o4t1")
+
+[node name="Mrbullet" type="Sprite2D" parent="." unique_id=580353413]
+position = Vector2(138, 555)
+texture = ExtResource("7_qe12f")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
