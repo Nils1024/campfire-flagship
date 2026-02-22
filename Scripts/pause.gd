@@ -10,6 +10,9 @@ enum barcodeState {
 var current_state = barcodeState.PLAY
 var pending_gamestate: String = ""
 
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		var keycode = event.keycode
@@ -24,11 +27,14 @@ func _input(event: InputEvent) -> void:
 
 func on_barcode_scanned(barcode: String) -> void:
 	match barcode:
-		"PauseGame": 
-			pause_game()
+		"PauseGame":
+			if current_state == barcodeState.PASUE:
+				play_game()
+			else:
+				pause_game()
 			
-		"StartGame": 
-			play_game()
+		#"StartGame": 
+			#play_game()
 
 
 func pause_game():

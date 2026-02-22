@@ -93,5 +93,8 @@ func _on_end_area_area_entered(_area: Area2D) -> void:
 	$HealthBar.value = GlobalData.health
 	$HealthBar/HealthLabel.text = "Health = " + str(GlobalData.health)
 	if GlobalData.health <= 0.0:
-		get_tree().quit()
+		GlobalData.reset_variables()
+		get_tree().change_scene_to_file("res://game_over.tscn")
+	
+		
 		

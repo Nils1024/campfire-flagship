@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cju5aq41cbvt2"]
+
+[ext_resource type="Script" uid="uid://dua7qsk1ktour" path="res://main_menu.gd" id="1_ccer4"]
+[ext_resource type="Texture2D" uid="uid://dygm1nirubimm" path="res://Assets/path-draft-one.png" id="2_8u835"]
+[ext_resource type="Texture2D" uid="uid://ddalg3jdkhs0t" path="res://Assets/thened.png" id="3_ftari"]
+
+[node name="GameOver" type="Node2D" unique_id=961337452]
+script = ExtResource("1_ccer4")
+
+[node name="BG" type="TextureRect" parent="." unique_id=604858456]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_8u835")
+
+[node name="Dim" type="ColorRect" parent="BG" unique_id=1914096285]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0.0627451, 0.0627451, 0.0627451, 0.6862745)
+
+[node name="TextureRect" type="TextureRect" parent="BG/Dim" unique_id=601764656]
+modulate = Color(0.49433076, 0.49433076, 0.4943307, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -530.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_ftari")
+
+[node name="Label" type="Label" parent="BG/Dim" unique_id=1725051184]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.5
+offset_top = -65.0
+offset_right = 329.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.44755095, 0.44755095, 0.44755095, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 64
+text = "[Scan Start to Replay]"
+
+[node name="Label2" type="Label" parent="BG/Dim" unique_id=1466762952]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.5
+offset_top = -204.0
+offset_right = 329.5
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.82606, 0.82606006, 0.82606, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER"
+horizontal_alignment = 1
