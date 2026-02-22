@@ -25,7 +25,7 @@ func next_round():
 	mutation_chance += 6
 
 func reset_variables():
-	mutation_chance = 100#4
+	mutation_chance = 4
 	scale_increase = .25
 	max_scale = 1.0
 	min_scale = max_scale + scale_increase
