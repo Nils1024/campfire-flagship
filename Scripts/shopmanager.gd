@@ -66,24 +66,25 @@ func apply_powerup_to_tower(powerup: String, tower: String) -> void:
 	match powerup:
 		"FasterReload":
 			if GlobalData.points >= fastreloadprice:
-				GlobalData.points =- fastreloadprice
+				GlobalData.points -= fastreloadprice
 				fastreloadprice *= 2
-				if reloadtime != 0.1:
-					reloadtime = reloadtime - 0.1
+				reloadtime = max(0.1, reloadtime - 0.1)
+				
 		"BiggerRadius":
 			if GlobalData.points >= biggerradiusprice:
-				GlobalData.points =- biggerradiusprice
+				GlobalData.points -= biggerradiusprice
 				biggerradiusprice *= 2
-				towerRadius += .5
+				towerRadius += 0.5
+				
 		"MorePower":
 			if GlobalData.points >= morepowerprice:
-				GlobalData.points =- morepowerprice
+				GlobalData.points -= morepowerprice
 				morepowerprice *= 2
 				strenght += 1
+				
 		"2xPoints":
 			if GlobalData.points >= twoxpointsprice:
-				
-				GlobalData.points =- twoxpointsprice
+				GlobalData.points -= twoxpointsprice
 				twoxpointsprice *= 2
 				multiplier *= 2
 

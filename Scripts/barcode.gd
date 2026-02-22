@@ -41,15 +41,15 @@ func _physics_process(delta):
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		var keycode = event.keycode
+		
 		if keycode == KEY_ENTER or keycode == KEY_KP_ENTER:
-			if barcode_buffer != "":
-				on_barcode_scanned(barcode_buffer)
+			if barcode_buffer.strip_edges() != "":
+				on_barcode_scanned(barcode_buffer.strip_edges())
 				barcode_buffer = ""
 		else:
-			# Append the character to the buffer
-			var ch = char(event.unicode)
-			if event.unicode > 0:
-				barcode_buffer += ch
+			
+			if event.unicode > 31 and event.unicode < 127:
+				barcode_buffer += char(event.unicode)
 
 func on_barcode_scanned(barcode: String) -> void:
 	for code in codes.values():
@@ -68,7 +68,7 @@ func spawn_effect(tower):
 	var sprite = tower.get_node("Sprite2D")
 	
 	var spin_time = 0.3
-	var spin_speed = 1060.0 # degrees per second
+	var spin_speed = 1500.0 # degrees per second
 	
 	var elapsed = 0.0
 	
