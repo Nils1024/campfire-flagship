@@ -39,6 +39,7 @@ func play_animation():
 		$Button.visible = false
 		$Button.disabled = true
 	if $Node2D/AnimationPlayer:
+		$ChickInPainAudio.play()
 		$Node2D/AnimationPlayer.play("Start")
 		await $Node2D/AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://test.tscn")

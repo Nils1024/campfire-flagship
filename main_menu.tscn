@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3fjivtvaanbb" path="res://Assets/bloodsplatter.png" id="4_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://cotge6mrnhrxj" path="res://Assets/angrychicken.png" id="5_qe12f"]
 [ext_resource type="Texture2D" uid="uid://diwcna5ykop6d" path="res://Assets/Frame 1.png" id="6_8qtwp"]
+[ext_resource type="AudioStream" uid="uid://bs2ycojjspl18" path="res://Assets/chicken-on-tree-screaming.mp3" id="7_qe12f"]
 
 [sub_resource type="Animation" id="Animation_vxl6d"]
 length = 0.001
@@ -243,5 +244,10 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(575, 324.00003)
 scale = Vector2(1152, 648)
 mesh = SubResource("QuadMesh_0o4t1")
+
+[node name="ChickInPainAudio" type="AudioStreamPlayer2D" parent="." unique_id=992797458]
+stream = ExtResource("7_qe12f")
+volume_db = 24.0
+pitch_scale = 1.25
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
