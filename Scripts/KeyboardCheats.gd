@@ -6,7 +6,7 @@ var can_fire := true
 # 1.0 = same speed
 # 1.5 = 50% slower
 # 2.0 = twice as slow
-var keyboard_penalty := 1.0
+var keyboard_penalty := .8
 
 
 func _ready():
