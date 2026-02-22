@@ -2,7 +2,7 @@
 Scrapyard is a Tower defense game which is designed to be played with barcode scanners (You can also play it with your keyboard).
 Level up your towers and survive as long as you can
 
-itch.io:
+itch.io: https://joshisyes.itch.io/campfire-flagship-game
 	
 ## Controls
 You can activate the towers by pressing following keys:
