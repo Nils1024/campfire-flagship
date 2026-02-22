@@ -26,10 +26,15 @@ var codes_on_reload = []
 	}
 }
 
+@onready var keybaordstuff = $KeyBoardStuff
+
 var barcode_buffer: String = ""
 
 
 func _ready() -> void:
+	if Keyboard.keyboard_mode == true:
+		keybaordstuff.visible = true
+	
 	add_to_group("BarcodeManager")
 	$HealthBar.value = GlobalData.health
 	$HealthBar.max_value = GlobalData.health
@@ -99,3 +104,7 @@ func _on_end_area_area_entered(_area: Area2D) -> void:
 	
 		
 		
+
+
+func _on_pause_pressed():
+	pass # Replace with function body.

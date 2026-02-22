@@ -108,4 +108,17 @@ text = "Health = 10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyBoardStuff" type="Node2D" parent="." unique_id=1339314081]
+visible = false
+
+[node name="Pause" type="Button" parent="KeyBoardStuff" unique_id=263834896]
+offset_left = 562.0
+offset_top = 533.0
+offset_right = 663.0
+offset_bottom = 622.0
+theme_override_colors/font_color = Color(0.7882353, 0.20392157, 0.08627451, 1)
+theme_override_font_sizes/font_size = 32
+text = "Pause"
+
 [connection signal="area_entered" from="EndArea" to="." method="_on_end_area_area_entered"]
+[connection signal="pressed" from="KeyBoardStuff/Pause" to="." method="_on_pause_pressed"]

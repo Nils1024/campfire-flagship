@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://biyg2j5sw6dtl"]
+
+[ext_resource type="Script" uid="uid://crwgdug85qug6" path="res://Scripts/GameOverStats.gd" id="1_e7rdd"]
+[ext_resource type="Texture2D" uid="uid://ddalg3jdkhs0t" path="res://Assets/thened.png" id="2_blqjs"]
+
+[node name="Shop" type="Control" unique_id=2014165722]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="." unique_id=259589223]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0.0627451, 0.0627451, 0.0627451, 0.6862745)
+script = ExtResource("1_e7rdd")
+
+[node name="TextureRect" type="TextureRect" parent="Dim" unique_id=844833303]
+modulate = Color(0.49433076, 0.49433076, 0.4943307, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -310.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_blqjs")
+
+[node name="Title" type="Label" parent="Dim" unique_id=1166922960]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -367.0
+offset_top = 25.0
+offset_right = 367.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.82606, 0.82606006, 0.82606, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 128
+text = "Shop"
+horizontal_alignment = 1
+
+[node name="Buttons" type="Control" parent="Dim" unique_id=978279875]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FasterReload" type="Button" parent="Dim/Buttons" unique_id=575289546]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 209.0
+offset_right = 367.0
+offset_bottom = 326.0
+text = "Faster Reload"
+
+[node name="IncreaseRadius" type="Button" parent="Dim/Buttons" unique_id=1101028887]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 214.0
+offset_right = 578.0
+offset_bottom = 323.0
+text = "IncreaseRadius"
+
+[node name="IncreaseDamage" type="Button" parent="Dim/Buttons" unique_id=1714840805]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 215.0
+offset_right = 789.0
+offset_bottom = 325.0
+text = "Increase Damage"
+
+[node name="2xPoints" type="Button" parent="Dim/Buttons" unique_id=439707647]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 218.0
+offset_right = 989.0
+offset_bottom = 318.0
+text = "2x points
+"
+
+[node name="Towers" type="Control" parent="Dim/Buttons" unique_id=428343157]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Celsius" type="Button" parent="Dim/Buttons/Towers" unique_id=1878302145]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 405.0
+offset_right = 309.0
+offset_bottom = 436.0
+text = "Celsius"
+
+[node name="Celsius2" type="Button" parent="Dim/Buttons/Towers" unique_id=2036830684]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 424.0
+offset_right = 847.0
+offset_bottom = 455.0
+text = "Cheezits"
+
+[node name="Celsius3" type="Button" parent="Dim/Buttons/Towers" unique_id=661062780]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 468.0
+offset_right = 595.0
+offset_bottom = 499.0
+text = "YubiKey"
+
+[node name="Celsius4" type="Button" parent="Dim/Buttons/Towers" unique_id=1640912552]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 541.0
+offset_right = 328.0
+offset_bottom = 572.0
+text = "NumPad"
+
+[node name="Celsius5" type="Button" parent="Dim/Buttons/Towers" unique_id=1296730744]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 545.0
+offset_right = 854.0
+offset_bottom = 576.0
+text = "Coke"
