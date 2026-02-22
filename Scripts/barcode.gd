@@ -83,7 +83,8 @@ func spawn_effect(tower):
 		var delta = get_process_delta_time()
 		sprite.rotation_degrees += spin_speed * delta
 		elapsed += delta
-		await get_tree().process_frame
+		if get_tree():
+			await get_tree().process_frame
 	
 	sprite.rotation_degrees = 0
 	

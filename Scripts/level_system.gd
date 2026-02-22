@@ -30,8 +30,9 @@ func _process(delta: float) -> void:
 				"SPEED":
 					animation_player.speed_scale *= 2
 				"HEALTH":
-					enemy.scale *= 1.5
-					enemy.set_meta("HEALTH", 2)
+					var scale = [GlobalData.min_scale,GlobalData.max_scale].pick_random()
+					enemy.scale *= scale
+					set_meta("HEALTH", 1+(scale-1)/GlobalData.scale_increase)
 		else:
 			enemy.set_meta("Mutation","None")
 			enemy.set_meta("HEALTH", 1)
